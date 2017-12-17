@@ -12,4 +12,3 @@ export function touchTwitter() {
     type: TOUCH_TWITTER
   };
 }
-

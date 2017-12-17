@@ -5,13 +5,14 @@ import reducer from './reducers/index';
 import saga from './sagas/index';
 import initCanvas from './lib/init-canvas';
 
-document.onload = () => {
-  const ctx = initCanvas();
-
+window.onload = () => {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
     reducer,
     applyMiddleware(sagaMiddleware, logger)
   );
+  
+  const ctx = initCanvas(store.dispatch);
+  sagaMiddleware.run(saga);
 }
 
