@@ -18,6 +18,6 @@
   "scripts": {
     "start": "parcel index.html",
     "test": "jest",
-	"travis-test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+	"travis-test": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   }
 }
